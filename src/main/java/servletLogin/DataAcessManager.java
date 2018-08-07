@@ -120,18 +120,5 @@ public class DataAcessManager{
             return false;
         }
     }
-
-    /**
-     * Main function used for testing
-     *
-     */
-    public static void main(String[] args){
-        Map<String, String> keys = new HashMap<String, String>();
-        keys.put("username", "lol4");
-        keys.put("password", "lol4");
-
-        DataAcessManager mongo = DataAcessManager.getInstance();
-        mongo.delete(keys);
-    }
 }
 
