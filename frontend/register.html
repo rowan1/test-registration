@@ -1,0 +1,100 @@
+<html>
+<head>
+   <meta charset="UTF-8">
+</head>
+<body>
+
+    <div>
+        <h1>Sign Up</h1>
+        <hr>
+        <br>
+        <label for="name"><b>Name</b></label>
+        <input type="text" name="name" id="name" required>
+        <br><br>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" name="psw" id="password" onkeyup='check();' required>
+        <br><br>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" name="psw-repeat" id="confirm_password" onkeyup='check();' required>
+        <span id='message'></span>
+        <br><br>
+
+
+        <div>
+            <button type="button" id="cancel">Cancel</button>
+            <button type="button" id="signup">Sign Up</button>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+        </script>
+        <script>
+            $("#cancel").click(function() {
+                document.location.href = "file:///home/mohammednasser/task%20login/landing.html";
+            })
+            var password = document.getElementById("password"),
+                confirm_password = document.getElementById("confirm_password");
+            var patt = new RegExp("/^(((?=.*[a-z])(?=.*[A-Z])))(?=.{6,})/");
+
+            var check = function() {
+                if (password.value != confirm_password.value) {
+                    document.getElementById('message').style.color = 'red';
+                    document.getElementById('message').innerHTML = 'does not match';
+                    return false;
+                } else {
+                    document.getElementById('message').style.color = 'green';
+                    document.getElementById('message').innerHTML = 'match';
+                    return true;
+                }
+            };
+
+            document.getElementById("signup").onclick = function() {
+
+		if($("#password").val()!=$("#confirm_password").val())
+
+		{alert("passwords do not match");
+		return false;
+		}
+		else{
+                var pass = password.value;
+		var formData = {
+			'name': $('input[id=name]').val(),
+			'password': $('input[id=password]').val(),
+			
+		 };
+
+		var request = $.ajax({
+		  url: "http://192.168.1.8:8080/signup",
+		  type: "POST",
+		  dataType: 'json',
+		  data: formData,
+		 success: function(msg){
+			console.log(msg);
+		  },
+	          error: function(msg){
+			console.log(msg);
+		  }
+		});
+
+		request.done(function(msg) {
+		  alert(msg);
+		});
+
+		request.fail(function(jqXHR, textStatus) {
+		  console.log(jqXHR);
+		});
+
+           return true; }
+}
+
+        </script>
+
+
+    </div>
+
+
+</body>
+</html>
