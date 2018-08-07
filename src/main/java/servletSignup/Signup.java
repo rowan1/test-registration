@@ -32,14 +32,9 @@ public class Signup extends HttpServlet {
 
                 System.out.println("registered");
                 sendJson("registered",pw);
+                System.out.println(" ");
 
             }
-
-//            else if (responsereturned.equals("False")){
-//                //response.setStatus(401);
-//                System.out.println("sayb 7agat 8lt");
-//                sendJson("fill in the required fields",pw);
-//            }
 
             else {
 
