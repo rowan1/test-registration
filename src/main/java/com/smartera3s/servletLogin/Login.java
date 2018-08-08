@@ -22,14 +22,14 @@ public class Login extends HttpServlet {
         String msg = "tmam";
         String json = new Gson().toJson(msg);
 
-        if (response.equals("True")){
+        if (response.equals("true")){
             System.out.println("signed in");
             //res.setStatus(200);
             sendJson("logged in successfully",pw);
 
         }
 
-        else if (response.equals("False")){
+        else if (response.equals("false")){
             System.out.println("signed in");
             //res.setStatus(401);
             sendJson("email or password doesn't match",pw);

@@ -1,10 +1,12 @@
 package com.smartera3s.servletSignup;
+import com.smartera3s.mongodb.DataAcessManager;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
 public class SignupMongodb {
-    DataAccessManager dbManager = DataAccessManager.getInstance();
+   public static DataAcessManager dbManager = DataAcessManager.getInstance();
+
     public static String sendRes(String name, String password) {
 
         HttpServletResponse res = null;
@@ -24,7 +26,7 @@ public class SignupMongodb {
             return "Password must be 6 or more and has UpperCase letter";
         }
         else {
-            return dbManager.insert(keys).toString();
+            return String.valueOf(dbManager.insert(keys));
         }
     }
 
