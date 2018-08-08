@@ -1,13 +1,19 @@
-package servletSignup;
+package com.smartera3s.servletSignup;
+import com.smartera3s.mongodb.DataAcessManager;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupMongodb {
+   public static DataAcessManager dbManager = DataAcessManager.getInstance();
 
     public static String sendRes(String name, String password) {
 
         HttpServletResponse res = null;
         boolean hasUppercase = !password.equals(password.toLowerCase());
-
+        Map<String, String>  keys = new HashMap<>();
+        keys.put("username", name);
+        keys.put("password", password);
         if (name.equals("") || password.equals("")) {
 
             return "Fill in the required fields";
@@ -19,21 +25,8 @@ public class SignupMongodb {
         else if ((password.length() < 6) || (!hasUppercase)) {
             return "Password must be 6 or more and has UpperCase letter";
         }
-        else if (!checkExistance(name)){
-            return "You are already registered";
-
-        }
         else {
-            insert(name, password);
-            //Registered Successfully
-            return "True";
-        }
-    }
-
-    public static void insert(String name, String password) {
-        if (name.equals("")) {
-            String newName = name;
-            String newPassword = password;
+            return String.valueOf(dbManager.insert(keys));
         }
     }
 
@@ -43,10 +36,6 @@ public class SignupMongodb {
                 return false;
             }
         }
-        return true;
-    }
-
-    public static boolean checkExistance(String name){
         return true;
     }
 

@@ -1,4 +1,5 @@
-/home/rowan/IdeaProjects/myapp/src/main/java/servletLogin/Login.java
-/home/rowan/IdeaProjects/myapp/src/main/java/servletSignup/SignupMongodb.java
-/home/rowan/IdeaProjects/myapp/src/main/java/servletSignup/Signup.java
-/home/rowan/IdeaProjects/myapp/src/main/java/servletLogin/LoginMongodb.java
+/home/omar/IdeaProjects/test-registration/src/main/java/com/smartera3s/servletSignup/SignupMongodb.java
+/home/omar/IdeaProjects/test-registration/src/main/java/com/smartera3s/servletLogin/Login.java
+/home/omar/IdeaProjects/test-registration/src/main/java/com/smartera3s/servletLogin/LoginMongodb.java
+/home/omar/IdeaProjects/test-registration/src/main/java/com/smartera3s/mongodb/DataAcessManager.java
+/home/omar/IdeaProjects/test-registration/src/main/java/com/smartera3s/servletSignup/Signup.java

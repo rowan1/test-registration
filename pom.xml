@@ -57,45 +57,20 @@
                     </systemProperties>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.javalite</groupId>
-                <artifactId>activejdbc-instrumentation</artifactId>
-                <executions>
-                    <execution>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>instrument</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <dependencies>
         <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>activeweb</artifactId>
-            <version>${activeweb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>activeweb-testing</artifactId>
-            <version>${activeweb.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.27</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -108,12 +83,6 @@
             <version>1.7.0</version>
             <scope>system</scope>
             <systemPath>${java.home}/../lib/tools.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
