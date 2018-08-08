@@ -33,7 +33,7 @@
         </script>
         <script>
             $("#cancel").click(function() {
-                document.location.href = "file:///home/mohammednasser/task%20login/landing.html";
+                document.location.href = "file:///home/mohammednasser/task%20login/test-registration/frontend/landing.html";
             })
             var password = document.getElementById("password"),
                 confirm_password = document.getElementById("confirm_password");
@@ -67,7 +67,7 @@
 		 };
 
 		var request = $.ajax({
-		  url: "http://192.168.1.8:8080/signup",
+		  url: "http://localhost:8080/signup",
 		  type: "POST",
 		  dataType: 'json',
 		  data: formData,
