@@ -1,4 +1,4 @@
-package servletSignup;
+package com.smartera3s.servletSignup;
 import javax.servlet.http.HttpServletResponse;
 
 public class SignupMongodb {

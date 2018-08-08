@@ -11,11 +11,11 @@ import java.util.*;
  * database and also checking if credentials already existed in the database.
  *
  * @author ...
- * @version 1.3
+ * @version 1.4
  */
 public class DataAcessManager{
 
-    private static Mongo instance;
+    private static DataAcessManager instance;
     private DBCollection collection;
 
     /**
@@ -23,7 +23,7 @@ public class DataAcessManager{
      *
      * @param args (optional) should contain hostname and port number for MongoDB
      */
-    private Mongo(String... args){
+    private DataAcessManager(String... args){
         MongoClient mongoClient;
 
         if (args.length == 0) {
@@ -40,11 +40,11 @@ public class DataAcessManager{
      * Singleton pattern restricts the instantiation of Mongo class and ensures
      * that only one instance of the database <demo> exists.
      *
-     * @return Mongo instance
+     * @return DataAcessManager instance
      */
-    public static Mongo getInstance(){
+    public static DataAcessManager getInstance(){
         if (instance == null)
-            instance = new Mongo();
+            instance = new DataAcessManager();
         return instance;
     }
 

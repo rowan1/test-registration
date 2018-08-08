@@ -1,6 +1,6 @@
-package servletSignup;
+package com.smartera3s.servletSignup;
 import com.google.gson.Gson;
-import servletLogin.LoginMongodb;
+import com.smartera3s.servletLogin.LoginMongodb;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

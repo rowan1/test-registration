@@ -1,4 +1,4 @@
-package servletLogin;
+package com.smartera3s.servletLogin;
 import com.google.gson.Gson;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
