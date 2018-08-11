@@ -87,9 +87,9 @@ public class DataAcessManager{
             collection.remove(deleteQuery);
 
             return true;
-        }else{
-            return false;
         }
+
+        return false;
     }
 
     /**
@@ -114,11 +114,8 @@ public class DataAcessManager{
             result.add(cursor.next());
         }
 
-        if (result.size() != 1){
-            return true;
-        }else{
-            return false;
-        }
+        return (result.size() != 1);
+
     }
 }
 
